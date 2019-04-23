@@ -4,37 +4,37 @@ const concat = require('gulp-concat');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
-// const smartgrid = require('smart-grid');
+const smartgrid = require('smart-grid');
 // const cleanCSS = require('gulp-clean-css');
 // var gcmq = require('gulp-group-css-media-queries');
 
-// var settings = {
-//     outputStyle: 'scss', /* less || scss || sass || styl */
-//     columns: 12, /* number of grid columns */
-//     offset: '30px', /* gutter width px || % || rem */
-//     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
-//     container: {
-//         maxWidth: '1140px', /* max-width оn very large screen */
-//         fields: '15px' /* side fields */
-//     },
-//     breakPoints: {
-//         lg: {
-//             width: '1100px', /* -> @media (max-width: 1100px) */
-//         },
-//         md: {
-//             width: '960px'
-//         },
-//         sm: {
-//             width: '780px',
-//             fields: '15px' /* set fields only if you want to change container.fields */
-//         },
-//         xs: {
-//             width: '560px'
-//         }
-//     }
-// };
+var settings = {
+    outputStyle: 'scss', /* less || scss || sass || styl */
+    columns: 12, /* number of grid columns */
+    offset: '30px', /* gutter width px || % || rem */
+    mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
+    container: {
+        maxWidth: '1140px', /* max-width оn very large screen */
+        fields: '15px' /* side fields */
+    },
+    breakPoints: {
+        lg: {
+            width: '1100px', /* -> @media (max-width: 1100px) */
+        },
+        md: {
+            width: '960px'
+        },
+        sm: {
+            width: '780px',
+            fields: '15px' /* set fields only if you want to change container.fields */
+        },
+        xs: {
+            width: '560px'
+        }
+    }
+};
  
-// smartgrid('./src/sass', settings);
+smartgrid('./src/sass', settings);
 
 function style() {
     return gulp.src('./src/sass/main.scss')
